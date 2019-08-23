@@ -1,97 +1,85 @@
-body{
-    
-}
-.coluna div{
-    width: 100px;
-    
-    font-size: 3em;
-border: solid 5px;
-padding: 20px ;
-margin: 10px;
-}
+*{ 
+    box-sizing: border-box;
+   
+  }
+  body{
+    font-family: Arial;
+    margin: 0px;
+  }
+ 
 
-.coluna .cor1{
-border: solid 10px blueviolet;
-color: blueviolet;
-}
-.coluna .cor2{
-border: solid 10px red;
-color: red;
-}
+  .linha{
+    display: -webkit-flex;
+    display: flex;
+  }
+  
 
+  .coluna {
+      margin: 50px;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+    padding: 10px;
+    height: 300px;
+  }
+  .coluna .cor1{
+    background-color: aqua;
+  }
+  .coluna .cor2{
+      background-color: black;
+}
 .coluna .cor3{
-border: solid 10px greenyellow;
-color: greenyellow;
+      background-color: blue;
 }
-
 .coluna .cor4{
-border: solid 10px blue;
-color: blue;
+      background-color: blueviolet;
 }
-
 .coluna .cor5{
-border: solid 10px yellow;
-color: yellow;
+      background-color: brown;
+
 }
 
-.coluna .cor6{
-border: solid 10px grey;
-color: grey;
-}
-
-#c2{
-    position: absolute;
-margin-top: -170px;
-margin-left: 230px;
+  #c1{
+      height: 285px;
+      border: solid 1px;
+  }
+  #c2{
+    height: 285px;
+    border: solid 1px;
 }
 #c3{
-    position: absolute;
-margin-top: -170px;
-margin-left: 430px;
+    text-align: center;
+    font-size: 30px;
+    height: 285px;
+    border: solid 1px;
 }
 #c4{
-    position: absolute;
-margin-top: -170px;
-margin-left: 630px;
+    height: 285px;
+    border: solid 1px;
 }
 #c5{
-    position: absolute;
-margin-top: -170px;
-margin-left: 830px;
+    height: 285px;
+    border: solid 1px;
 }
 #c6{
-    position: absolute;
-margin-top: -170px;
-margin-left: 1030px;
+    height: 285px;
+    border: solid 1px;
 }
-#core1{
+#c7{
+    height: 285px;
+    border: solid 1px;
+}
+#c8{
+    height: 285px;
+    border: solid 1px;
+}
+#c9{
+    height: 285px;
+    border: solid 1px;
+}
+#c10{
+    height: 285px;
+    border: solid 1px;
+}
 
-    margin-top: 90px;
-}
-
-#core2{
-    position: absolute;
-margin-top: -165px;
-margin-left: 230px;
-}
-#core3{
-    position: absolute;
-margin-top: -165px;
-margin-left: 430px;
-}
-#core4{
-    position: absolute;
-margin-top: -165px;
-margin-left: 630px;
-}
-#core5{
-    position: absolute;
-margin-top: -165px;
-margin-left: 830px;
-}
-#core6{
-    position: absolute;
-margin-top: -165px;
-margin-left: 1030px;
-}
 

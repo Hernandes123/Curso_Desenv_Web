@@ -8,7 +8,18 @@ const axios = require('axios')
 })
 */
 
+const inicio_execucao = f => f.inicio_execucao == '27/01/2016'
+
+const area_conhecimento = f => f.area_conhecimento == 'ENGENHARIA ELÉTRICA'
+
 axios.get(url).then(resposta =>{
-    const server = resposta.data
-    module.exports.resposta = server
+    const servidores = resposta.data
+    module.exports.resultado = servidores.filter(area_conhecimento).filter( inicio_execucao)
+    console.log(this.resultado)
+
 })
+
+
+
+
+

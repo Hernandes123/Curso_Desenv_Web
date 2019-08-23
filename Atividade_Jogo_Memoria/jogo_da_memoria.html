@@ -8,92 +8,101 @@
     <title>Jogo-da-memoria</title>
 </head>
 <body>
-    <div class="coluna">
-     
-    <div id="c1" onclick="c1(),cap()">
-        Card-1
-    </div>
+                <section class="linha">
+                                <section class="coluna">
+                                        <div id="c1" onclick="cor1(),alterar()">
 
+                                        </div>
+                                       
+                                </section>
+                                <section class="coluna">
+                                <div id="c2" onclick="cor2()">
 
-    <div id="c2" onclick="c2()">
-            Card-2
-    </div>
+                                </div>
+                                    
+                                </section>
+                                <section class="coluna" >
+                                <div id="c3" onclick="cor3()">
+                                        
+                                </div>    
+                                 </section>
+                                <section class="coluna">
+                                <div id="c4" onclick="cor4()">
 
+                                </div>
+                                </section>
+                                <section class="coluna">
+                                <div id="c5" onclick="cor5()">
 
-    <div id="c3" onclick="c3()">
-            Card-3
-    </div>
+                                </div>    
+                                </section>
+                                </section>
+                                <section class="linha">
+                                                <section class="coluna">
+                                                <div id="c6" onclick="cor6(),c()">
 
+                                                </div>                              
+                                                </section>
+                                                <section class="coluna">
+                                                <div id="c7" onclick="cor7()">
 
-    <div id="c4" onclick="c4()">
-            Card-4
-    </div>
+                                                </div>   
+                                                </section>
+                                                <section class="coluna">
+                                                <div id="c8" onclick="cor8()">
 
+                                                </div>
+                                                 </section>
+                                                <section class="coluna">
+                                                <div id="c9" onclick="cor9()">
 
-    <div id="c5" onclick="c5()">
-            Card-5
-    </div>
+                                                </div>     
+                                                </section>
+                                                <section class="coluna">
+                                                <div id="c10" onclick="cor10()">
 
-
-    <div id="c6" onclick="c6()">
-            Card-6
-    </div>
-  
-
-    <div id="core1"onclick="c7(),cap()">
-            Card-7
-    </div>
-
-
-    <div id="core2" onclick="c8()">
-            Card-8
-    </div>
-
-
-    <div id="core3" onclick="c9()">
-            Card-9
-    </div>
-
-
-    <div id="core4" onclick="c10()">
-            Card-10
-    </div>
-
-
-    <div id="core5" onclick="c11()">
-            Card-11
-    </div>
-
-
-    <div id="core6" onclick="c12()">
-            Card-12
-    </div>
-
-
-    </div>
+                                                </div>
+                                                        </section>
+                                                </section>
+                                            
+                              
+                           
+                
+                           
 
 </body>
 <script>
-    const c1 = () => document.getElementById('c1').classList.toggle('cor1')
-    const c2 = () => document.getElementById('c2').classList.toggle('cor2')
-    const c3 = () => document.getElementById('c3').classList.toggle('cor3')
+   function cor1(){
+     document.getElementById('c1').classList.toggle('cor1')
 
-    const c4 = () => document.getElementById('c4').classList.toggle('cor4')
-    const c5 = () => document.getElementById('c5').classList.toggle('cor5')
-    const c6 = () => document.getElementById('c6').classList.toggle('cor6')
+   }
+   function cor2(){
+        document.getElementById('c2').classList.toggle('cor2')
+   }function cor3(){
+        document.getElementById('c3').classList.toggle('cor3')
+   }function cor4(){
+        document.getElementById('c4').classList.toggle('cor4')
+   }function cor5(){
+        document.getElementById('c5').classList.toggle('cor5')
+   }
+   function cor6(){
+         document.getElementById('c6').classList.toggle('cor1')
+   }
+   function cor7(){
+        document.getElementById('c7').classList.toggle('cor2')
+   }
+   function cor8(){
+        document.getElementById('c8').classList.toggle('cor3')
+   }
+   function cor9(){
+        document.getElementById('c9').classList.toggle('cor4')
+   }
+   function cor10(){
+        document.getElementById('c10').classList.toggle('cor5')
+   }
+   
 
-    const c7 = () => document.getElementById('core1').classList.toggle('cor1')
-    const c8 = () => document.getElementById('core2').classList.toggle('cor2')
-    const c9 = () => document.getElementById('core3').classList.toggle('cor3')
 
-    const c10 = () => document.getElementById('core4').classList.toggle('cor4')
-    const c11 = () => document.getElementById('core5').classList.toggle('cor5')
-    const c12 = () => document.getElementById('core6').classList.toggle('cor6')
-
-
-function cap() {
-    
-}
 
 
     
