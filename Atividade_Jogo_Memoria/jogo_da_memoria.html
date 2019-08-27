@@ -1,111 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="jogo.css" rel="stylesheet">
-    <title>Jogo-da-memoria</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link href="jogo.css" rel="stylesheet">
+     <title>Jogo-da-memoria</title>
 </head>
+
 <body>
-                <section class="linha">
-                                <section class="coluna">
-                                        <div id="c1" onclick="cor1(),alterar()">
+     <section class="linha">
+          <section class="coluna">
+               <div id="c1" onclick="compara_cor('c1','cor1')">
 
-                                        </div>
-                                       
-                                </section>
-                                <section class="coluna">
-                                <div id="c2" onclick="cor2()">
+               </div>
 
-                                </div>
-                                    
-                                </section>
-                                <section class="coluna" >
-                                <div id="c3" onclick="cor3()">
-                                        
-                                </div>    
-                                 </section>
-                                <section class="coluna">
-                                <div id="c4" onclick="cor4()">
+          </section>
+          <section class="coluna">
+               <div id="c2" onclick="compara_cor('c2','cor2')">
 
-                                </div>
-                                </section>
-                                <section class="coluna">
-                                <div id="c5" onclick="cor5()">
+               </div>
 
-                                </div>    
-                                </section>
-                                </section>
-                                <section class="linha">
-                                                <section class="coluna">
-                                                <div id="c6" onclick="cor6(),c()">
+          </section>
+          <section class="coluna">
+               <div id="c3" onclick="cor3()">
 
-                                                </div>                              
-                                                </section>
-                                                <section class="coluna">
-                                                <div id="c7" onclick="cor7()">
+               </div>
+          </section>
+          <section class="coluna">
+               <div id="c4" onclick="cor4()">
 
-                                                </div>   
-                                                </section>
-                                                <section class="coluna">
-                                                <div id="c8" onclick="cor8()">
+               </div>
+          </section>
+          <section class="coluna">
+               <div id="c5" onclick="cor5()">
 
-                                                </div>
-                                                 </section>
-                                                <section class="coluna">
-                                                <div id="c9" onclick="cor9()">
+               </div>
+          </section>
+     </section>
+     <section class="linha">
+          <section class="coluna">
+               <div id="c6" onclick="compara_cor('c6','cor1')">
 
-                                                </div>     
-                                                </section>
-                                                <section class="coluna">
-                                                <div id="c10" onclick="cor10()">
+               </div>
+          </section>
+          <section class="coluna">
+               <div id="c7" onclick="cor7()">
 
-                                                </div>
-                                                        </section>
-                                                </section>
-                                            
-                              
-                           
-                
-                           
+               </div>
+          </section>
+          <section class="coluna">
+               <div id="c8" onclick="cor8()">
+
+               </div>
+          </section>
+          <section class="coluna">
+               <div id="c9" onclick="cor9()">
+
+               </div>
+          </section>
+          <section class="coluna">
+               <div id="c10" onclick="cor10()">
+
+               </div>
+          </section>
+     </section>
+
+
+
+
+
 
 </body>
 <script>
-   function cor1(){
-     document.getElementById('c1').classList.toggle('cor1')
+var cont = 0
+var id_antigo=''
+var classe_antiga=''
+     
+   function compara_cor(id,classe){
+     
+     
+if(cont == 0){
+     id_antigo = id
+     classe_antiga = classe
+     document.getElementById(id).classList.add(classe)
+     cont++
+}else{
+     if(classe == classe_antiga){
+          alert('Acertou')
+          document.getElementById(id).classList.add(classe)
+
+          cont = 0
+     }else{
+          document.getElementById(id).classList.add(classe)
+          setTimeout(function(){ 
+               alert('Errou')
+          document.getElementById(id).classList.remove(classe)
+          document.getElementById(id_antigo).classList.remove(classe_antiga)
+          cont = 0 
+          
+          }, 3000);
+
+          
+
+     }
+}
 
    }
-   function cor2(){
-        document.getElementById('c2').classList.toggle('cor2')
-   }function cor3(){
-        document.getElementById('c3').classList.toggle('cor3')
-   }function cor4(){
-        document.getElementById('c4').classList.toggle('cor4')
-   }function cor5(){
-        document.getElementById('c5').classList.toggle('cor5')
-   }
-   function cor6(){
-         document.getElementById('c6').classList.toggle('cor1')
-   }
-   function cor7(){
-        document.getElementById('c7').classList.toggle('cor2')
-   }
-   function cor8(){
-        document.getElementById('c8').classList.toggle('cor3')
-   }
-   function cor9(){
-        document.getElementById('c9').classList.toggle('cor4')
-   }
-   function cor10(){
-        document.getElementById('c10').classList.toggle('cor5')
-   }
-   
 
 
 
 
-    
 
 </script>
+
 </html>
