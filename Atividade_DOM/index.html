@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    .tela{
+        border: solid 2px;
+        height: 300px;
+    }
+    </style>
+    <title>Atividade-Dom</title>
+</head>
+
+<body>
+    <div>
+        Nome:
+        <input type="text" name="nome" id="nome"><br /><br />
+        Telefone:
+        <input type="text" name="telefone" id="telefone"><br /><br />
+        Endereço:
+        <input type="text" name="endereco" id="endereco"><br /><br />
+        <button onclick="salvar()">
+            Salvar
+        </button>
+        
+
+    </div>
+    <br />
+
+    <div class="tela">
+
+    </div>
+   
+
+</body>
+<script>
+    //const body = document.querySelector('body')
+    //const form = document.createElement('forms')
+    //let nome = document.createElement('nome')
+    //form.innerHTML = nome
+    //body.appendChild(form)
+    //body.appendChild(nome)
+   
+
+    
+    
+    function salvar(){
+var nome = document.getElementById("nome").value;
+ var telefone = document.getElementById("telefone").value;
+ var endereco = document.getElementById("endereco").value;
+
+const cont = 0
+const tela = document.getElementsByClassName('tela')[0]
+const iten = document.createElement('p')
+const editar = document.createElement('button')
+editar.setAttribute('id','editar')
+editar.setAttribute('value','editar')
+editar.innerHTML = 'editar'
+editar.setAttribute('onclick','editar()')
+
+const excluir = document.createElement('button')
+excluir.setAttribute('id','excluir')
+excluir.setAttribute('value','excluir')
+excluir.innerHTML = 'excluir'
+excluir.setAttribute('onclick','excluir()')
+
+iten.innerText = "Nome: " +nome + "; Telefone: "+ telefone + "; endereco: "+endereco + "|" ;
+iten.appendChild(excluir)
+iten.appendChild(editar)
+
+tela.appendChild(iten)
+
+  
+ }
+
+
+function editar(){
+    
+}
+function excluir(){
+    setTimeout(function(){ alert("Voçe excluiu"); }, 2000);
+
+}
+
+   
+</script>
+
+</html>
