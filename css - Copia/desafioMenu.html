@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        /* ... */
+
+        .menu {
+            text-align: center;
+            height: 80px;
+            position: absolute;
+            left: 200px;
+            top: 50px;
+
+        }
+
+        .menu ul {
+            margin: 0px;
+
+        }
+
+        .menu li {
+            display: inline-block;
+
+        }
+
+        .menu a {
+            text-decoration: none;
+            padding: 15px;
+            border: 15px;
+            left: 40px;
+
+        }
+
+        .menu a:hover {
+            background-color: #4faddb;
+            color: #000;
+            border-radius: 5px;
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        img {
+            height: 100%;
+        }
+
+        .cabecalho {
+            background-color: #333;
+            border: solid 5px #4faddb;
+            box-sizing: content-box;
+        }
+
+        .cabecalho a {
+            text-decoration: none;
+            color: #eee;
+        }
+
+        .menu-toggle {
+            display: none;
+            text-align: right;
+            float: right;
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            padding: 10px;
+            border: 10px 10px 20px 20px;
+            margin: 20px 20px 15px 15px;
+        }
+
+        .botao {
+            border-radius: 30px;
+            padding: 10px;
+            border: 10px 10px 25px  25px;
+            margin: 10px;
+        }
+
+        .destaque {
+            background-color: #f50a31;
+            color: #fff;
+        }
+        .autenticacao{
+            position: absolute;
+            left: 1450px;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="https://bucket-gw-cni-static-cms-si.s3.amazonaws.com/static/img/logos/azul/SENAI.svg"
+                    alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+                <li>
+                    <a href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+    </header>
+
+    <script>
+        // ...
+    </script>
+</body>
+
+</html>
