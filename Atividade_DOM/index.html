@@ -78,10 +78,16 @@ tela.appendChild(iten)
 
 
 function editar(){
-    
+    var nome = document.getElementById("nome").value;
+    var telefone = document.getElementById("telefone").value;
+    var endereco = document.getElementById("endereco").value;
+    const form = document.querySelectorAll('div')
+    form.innerText =  nome+ telefone + endereco ;
 }
 function excluir(){
-    setTimeout(function(){ alert("Voçe excluiu"); }, 2000);
+    const div = document.querySelectorAll('div')
+    div[1].removeChild(div[1].childNodes[0])
+    setTimeout(function(){ alert("Voçe excluiu"); }, 100);
 
 }
 

@@ -7,67 +7,28 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+        /* ...*/
         *{
             box-sizing: border-box;
         }
-
         body{
             margin: 0px;
             font-family: 'Oswald' , sans-serif;
-
         }
-
-        .menu{
-            display: inline-block;
-            vertical-align: top;
-            height: 80px;
-            padding: 25px;
-        }
-
-        .menu ul{
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .menu li{
-            display: inline-block;
-        }
-
-        .menu a {
-            text-decoration: none;
-            padding: 15px;
-            border: 15px;
-            left: 40px;
-
-        }
-
-        .menu a:hover {
-            background-color: #4faddb;
-            color: #000;
-            border-radius: 5px;
-        }
-
-        .logo {
-            display: inline-block;
-            height: 80px;
-        }
-
-        img {
-            height: 100%;
-        }
-
-        .cabecalho {
+        .cabecalho{
             background-color: #333;
             border: solid 5px #4faddb;
+            height: 80px;
             box-sizing: content-box;
         }
-
-        .cabecalho a {
-            text-decoration: none;
-            color: #eee;
+        .logo{
+            display: inline-block;
+            height: 80px;
+            padding: 10px;
         }
-
+        .logo img{
+            height: 100%;
+        }
         .menu-toggle{
             float: right;
             color: #eee;
@@ -78,23 +39,42 @@
             padding: 10px 20px;
             margin: 20px 15px;
         }
-
-        .botao {
-            border-radius: 30px;
-            padding: 10px;
-            border: 10px   25px;
-            margin: 10px;
-        }
-
-        .destaque {
-            background-color: #f50a31;
-            color: #fff;
-        }
-        .autenticacao{
+        .menu{
+            display: inline-block;
+            vertical-align: top;
             height: 80px;
             padding: 25px;
-            float: right;
+        }
+        .menu ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .menu li{
+            display: inline-block;
+        }
+        .cabecalho a{
+            text-decoration: none;
+            color: #eee;
+            font-size: 1.3em;
             
+        }
+        .menu a{
+            padding: 15px;
+        }
+        .autenticacao{
+            float: right;
+            height: 80px;
+            padding: 25px;
+        }
+        .menu a:hover{
+            background-color: #4faddb;
+            color: #000;
+        }
+        .botao{
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 10px;
+            background-color: red;
         }
         @media(min-width: 670px ){
             .menu-toggle{display: none;}
@@ -105,6 +85,8 @@
         @media(max-width: 910px){
             .autenticacao{display: none;}
         }
+
+
     </style>
 </head>
 
