@@ -62,7 +62,8 @@
         }
 
         .menu-toggle {
-            display: none;
+            position:relative;
+            top: -80px;
             text-align: right;
             float: right;
             color: #eee;
@@ -85,9 +86,18 @@
             color: #fff;
         }
         .autenticacao{
-            position: absolute;
-            left: 1450px;
-            top: 50px;
+            position: relative;
+            float: right;
+            top: -50px;
+        }
+        @media(min-width: 670px ){
+            .menu-toggle{display: none;}
+        }
+        @media(max-width: 680px){
+            .menu{display: none;}
+        }
+        @media(max-width: 910px){
+            .autenticacao{display: none;}
         }
     </style>
 </head>

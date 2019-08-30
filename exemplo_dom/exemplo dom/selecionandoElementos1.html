@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+
+    <div id="primeiro" onclick="alterna1()">#primeiro</div>
+
+    <div id="segundo" onclick="alterna2()">Segundo</div>
+    
+    <div id="terceiro" onclick="alterna3()">.terceiro .ultimo</div>
+ 
+    <button id="bt_um"  onclick="exemplo()" >
+        Mudar
+    </button>
+    
+    <script>   
+  /*    
+// exemplo recuperando e selecionando elementos atravez do byId e atribuindo uma classe
+    const pri = document.getElementById('segundo')
+    pri.classList.add('destaque')
+
+    document.getElementById('primeiro').classList.add('destaque')
+
+    pri.innerHTML = "mudança"
+    pri.innerText = "outra mudança"
+*/
+
+// Metodo 1: ultilizando for para percorrer um array
+   //const divs = document.getElementsByTagName('div')
+   // const lista = Array.from(document.getElementsByTagName('div'))
+    //const lista_dois = [...document.getElementsByTagName('div')]
+    //for(let i=0; i<divs.length;i++){
+    //    lista[i].classList.add('destaque')
+    //} 
+
+// metodo 2: usando foreach para percorrer um elemento
+//lista.forEach(e =>e.classList.remove('destaque'))
+//lista[2].classList.remove('destaque')
+//Foreach não dá pra ser usado no HTMLcollection porém pode-se usa-lo no Htmlcollection transformado em array como o 'ex= lista'
+//lista_dois.forEach(e =>e.classList.remove('destaque'))
+
+  function exemplo(){
+        const bt = document.getElementById('bt_um')
+        const lista_dois = [...document.getElementsByTagName('div')]
+        if(bt.innerText == 'Mudar') {
+        lista_dois.forEach(e =>e.classList.add('destaque'))
+         bt.innerText = "Remover destaque"
+         }else{
+            lista_dois.forEach(e =>e.classList.remove('destaque'))
+            bt.innerText = "Mudar"
+
+         }
+        
+    }
+
+
+    const alterna1 = () => document.getElementById('primeiro').classList.toggle('destaque')
+    const alterna2 = () => document.getElementById('segundo').classList.toggle('destaque')
+    const alterna3 = () => document.getElementById('terceiro').classList.toggle('destaque')
+
+
+
+
+    </script>
+
+</body>
+</html>
