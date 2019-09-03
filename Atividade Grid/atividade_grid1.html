@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        header {
+            grid-area: cabecalho;
+            border: solid 1px;
+        }
+
+        nav {
+            grid-area: navegacao;
+            border: solid 1px;
+
+        }
+
+        main {
+            grid-area: corpo;
+            border: solid 1px;
+            display: grid;
+            grid-template-columns: 123px;
+            
+            
+
+        }
+
+
+        main div {
+            border: solid 1px;
+            
+        }
+     
+
+        footer {
+            grid-area: rodape;
+            border: solid 1px;
+        }
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 100%;
+            grid-template-rows: 40px 40px 1fr 40px;
+            grid-template-areas:
+                'cabecalho'
+                'navegacao'
+                'corpo'
+                'rodape';
+            text-align: center;
+            grid-row-gap: 12px;
+        }
+    </style>
+
+    <title>Wireframe 1</title>
+</head>
+
+<body>
+    <main class="tag">
+        <div class="d1">1</div>
+        <div class="d2">2</div>
+        <div class="d3">3</div>
+        <div class="d3">4</div>
+        <div class="d3">5</div>
+        
+    </main>
+    <header class="tag">header</header>
+    <footer class="tag">footer</footer>
+    <nav class="tag">NAVEGATION AREA</nav>
+</body>
+
+</html>

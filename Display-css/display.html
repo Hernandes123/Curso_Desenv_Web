@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    .flex{
+        display: flex;
+    }
+    .item{
+        margin: 5px;
+        background-color: tomato;
+        text-align: center;
+        font-size: 1.5em;
+        
+
+    }
+    .container{
+        border: 1px solid #ccc;
+        max-width: 400px;
+    }
+    .flex-wrap{
+        /*Ultilizado para realizar quebra de linha ou coluna no display flex*/
+        flex-wrap: wrap
+    }
+    /*Atributp flex determina o nivel de importância que cada elemento possui no display*/
+    .flex-item-1{
+        flex: 1 ;
+    }
+    .flex-item-2{
+        flex: 5;
+    }
+    .flex-item-3{
+        flex: 2;
+    }
+    </style>
+    <title>Display</title>
+</head>
+<body>
+    <h1>Display:block</h1>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+
+    <h1>Display:Flex</h1>
+    <section class="container flex">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    </section>
+
+    <h1>Display:Flex</h1>
+    <section class="container flex flex-wrap">
+    <div class="item">ítem 1</div>
+    <div class="item">item 2</div>
+    <div class="item">item 3</div>
+    <div class="item">item 4</div>
+    <div class="item">item 5</div>
+    <div class="item">item 6</div>
+    <div class="item">item 7</div>
+    <div class="item">item 8</div>
+    </section>
+
+    <h1>Display: Flex // flex item</h1>
+    <section class="container flex">
+    <div class="item flex-item-1">item 1</div>
+    <div class="item flex-item-2">item 2</div>
+    <div class="item flex-item-3">item 3</div>
+    
+  </section>
+    
+</body>
+</html>
