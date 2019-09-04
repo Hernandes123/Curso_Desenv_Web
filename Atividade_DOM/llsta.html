@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 1fr;
+            grid-template-rows: 100px 1fr 50px;
+            grid-template-areas:
+                'cabecalho'
+                'conteudo'
+                'rodape';
+
+            grid-column-gap: 10px;
+            grid-row-gap: 5px;
+        }
+
+        header {
+            grid-area: cabecalho;
+            border-bottom: solid 2px turquoise;
+            text-align: center;
+            font-family: 'Chilanka', cursive;
+            color: tomato;
+
+        }
+
+        div {
+            flex: 1;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.1em;
+            padding: 20px;
+        }
+
+        label {
+            font-size: 1.5em;
+            padding: 5px 0px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1.2em;
+            color: blue;
+        }
+
+        .lista {
+            text-align: center;
+        }
+
+        .lista,
+        .form {
+            border-right: solid 1px turquoise;
+            border-left: solid 1px turquoise;
+            margin-bottom: 5px;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: tomato;
+            text-align: center;
+            background-color: rgba(64, 224, 208, 0.8);
+            padding: 10px;
+            margin: 10px 0px;
+            font-size: 1.5em;
+            box-shadow: 1px 2px rgba(255, 99, 71, 0.5);
+
+        }
+
+        a:hover {
+            background-color: rgba(71, 172, 255);
+            box-shadow: rgba(64, 224, 208, 0.8)
+        }
+
+        a:active {
+            box-shadow: none;
+        }
+
+        main {
+            grid-area: conteudo;
+            display: flex;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+
+        }
+
+
+        footer {
+            grid-area: rodape;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+
+        }
+
+        li {
+            flex: 1;
+            border: solid 1px turquoise;
+            padding: 5px;
+        }
+    </style>
+    <title>Correção da lista dinâmica</title>
+</head>
+
+<body>
+    <header>
+        <h1>Lista Dinâmica</h1>
+    </header>
+
+    <main>
+        <div class="form">
+            <label>Nome:</label>
+            <input type="text" id="nome" placeholder="Digite seu nome">
+            <label>Idade:</label>
+            <input type="text" id="idade" placeholder="Digite seu idade">
+            <label>Telefone:</label>
+            <input type="text" id="telefone" placeholder="Digite seu telefone">
+            <a href="#" onclick="salvar()">SALVAR</a>
+        </div>
+
+        <div class="lista">
+            <ul>
+                <li>
+                    Lista:
+                </li>
+            </ul>
+        </div>
+    </main>
+
+
+    <footer>
+        &# 9400 &Copyright - 2019
+    </footer>
+</body>
+<script>
+    let cont = 0;
+    let edite = 0;
+
+    function salvar() {
+        if (edite != 0) {
+            const item = document.getElementsByTagName('li')[edite]
+            item.childNodes[1].innerHTML = document.querySelector('#nome').value
+            item.childNodes[3].innerHTML = document.querySelector('#idade').value
+            item.childNodes[5].innerHTML = document.querySelector('#telefone').value
+            edite = 0
+        } else {
+            cont++
+            const lista = document.querySelector('ul')
+            const item = document.createElement('li')
+            const nome = document.createElement('span')
+            const idade = document.createElement('span')
+            const telefone = document.createElement('span')
+            const r_nome = document.createElement('span')
+            const r_idade = document.createElement('span')
+            const r_telefone = document.createElement('span')
+            r_nome.innerHTML = 'Nome: '
+            r_idade.innerHTML = ' | idade: '
+            r_telefone.innerHTML = ' | Telefone: '
+            nome.innerHTML = document.querySelector('#nome').value
+            idade.innerHTML = document.querySelector('#idade').value
+            telefone.innerHTML = document.querySelector('#telefone').value
+            item.appendChild(r_nome)
+            item.appendChild(nome)
+            item.appendChild(r_idade)
+            item.appendChild(idade)
+            item.appendChild(r_telefone)
+            item.appendChild(telefone)
+
+            /*Criando Botões de Excluir e Editar*/
+            const editar = document.createElement('a')
+            editar.innerHTML = 'Editar'
+            editar.setAttribute('href', '#')
+            editar.setAttribute('class', 'editar')
+            editar.setAttribute('onclick', `editar(${cont})`)
+
+            const excluir = document.createElement('a')
+            excluir.innerHTML = 'Excluir'
+            excluir.setAttribute('href', '#')
+            excluir.setAttribute('class', 'excluir')
+            excluir.setAttribute('onclick', `excluir(${cont})`)
+
+
+            item.appendChild(editar)
+            item.appendChild(excluir)
+            lista.appendChild(item)
+        }
+
+        limpar()
+
+
+    }
+
+    function excluir(id) {
+        let lista = document.querySelector('ul')
+        let item = document.getElementsByTagName('li')[id]
+        let nome = item.childNodes[1].innerHTML
+        if (confirm(`Deseja realmente excluir: ${nome} ?`)) {
+            lista.removeChild(item)
+            cont--
+            atualizar_id()
+            edite = 0
+        }
+
+        limpar()
+
+    }
+
+    function limpar() {
+        const lista_input = Array.from(document.getElementsByTagName('input'))
+        lista_input.forEach(lista => lista.value = "")
+    }
+
+    function editar(id) {
+        const item = document.getElementsByTagName('li')[id]
+        const nome = document.querySelector('#nome')
+        const idade = document.querySelector('#idade')
+        const telefone = document.querySelector('#telefone')
+
+        nome.value = item.childNodes[1].innerHTML
+        idade.value = item.childNodes[3].innerHTML
+        telefone.value = item.childNodes[5].innerHTML
+
+        edite = id
+
+    }
+
+    function atualizar_id() {
+        let excluir = document.getElementsByClassName('excluir')
+        let editar = document.getElementsByClassName('editar')
+
+        for (let d = 0; d < excluir.length; d++) {
+            excluir[d].attributes[2].value = `excluir(${d + 1})`
+            editar[d].attributes[2].value = `editar(${d + 1})`
+
+        }
+    }
+</script>
+
+</html>
